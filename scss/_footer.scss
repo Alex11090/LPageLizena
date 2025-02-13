@@ -1,0 +1,12 @@
+footer {
+	.container {
+		background-color: rgb(100, 100, 100);
+		text-align: center;
+		height: 120px;
+		color: white;
+
+		display: flex; /* Включаем flexbox */
+		justify-content: center; /* Выравнивание по горизонтали */
+		align-items: center; /* Выравнивание по вертикали */
+	}
+}

@@ -1,0 +1,134 @@
+.advantages {
+  padding: 0;
+  position: relative;
+  margin: 80px 0;
+  .advantages-title {
+    h2 {
+      font-size: 36px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  .advantages-item {
+    display: block;
+    border-radius: 0;
+    margin-top: 30px;
+
+    .item {
+      width: 100%;
+      transition: all 0.3s;
+      overflow: hidden;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background-color: transparent;
+      display: flex;
+      gap: 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .item-title {
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 30px;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 80px;
+          height: 7px;
+          background-color: rgb(80, 121, 85);
+          margin-top: 18px;
+        }
+      }
+    }
+
+    .item > div {
+      width: 50%;
+      border: 2px solid rgba(186, 169, 115, 0.3);
+      box-shadow: 0 4px 25px rgba(33, 32, 30, 0.06);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .item > div:nth-child(1) {
+      padding: 47px;
+      padding-bottom: 10px;
+      text-align: left;
+    }
+  }
+
+  /* 🔹 Адаптив для планшетів (макс. 1024px) */
+  @media (max-width: 1024px) {
+    .advantages-item .item {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .advantages-item .item > div {
+      width: 80%;
+    }
+
+    .advantages-item .item:nth-child(even) {
+      flex-direction: column;
+    }
+  }
+
+  /* 🔹 Адаптив для мобільних пристроїв (макс. 768px) */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 28px;
+    }
+
+    .advantages-item {
+      .item {
+        gap: 15px;
+      }
+
+      .item > div {
+        width: 100%;
+      }
+
+      .item > div:nth-child(1) {
+        padding: 30px;
+      }
+    }
+  }
+
+  /* 🔹 Адаптив для маленьких екранів (макс. 480px) */
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 24px;
+    }
+
+    .advantages-item {
+      .item {
+        gap: 10px;
+      }
+
+      .item > div {
+        width: 100%;
+      }
+
+      .item > div:nth-child(1) {
+        padding: 20px;
+      }
+    }
+  }
+}
