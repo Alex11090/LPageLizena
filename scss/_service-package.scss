@@ -1,8 +1,27 @@
-.service-package-works {
-	display: flex;
 
-	.package-works {
-		width: 33%;
-		padding: 10px;
+#service-package{
+	.service-package-title{
+		margin: 30px 0;
+		h2{
+			padding: 10px 0;
+		}
+		p{
+			text-align: center;
+			padding: 10px 0;
+		}
+	}
+	.service-package-works {
+		display: flex;
+	
+		.package-works {
+			width: 33%;
+			padding: 21px;
+			text-align: start;
+			.package-works-title{
+				text-align: center;
+				margin: 0 0 28px 0;
+			}
+		}
 	}
 }
+

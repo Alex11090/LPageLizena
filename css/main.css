@@ -115,7 +115,6 @@ header nav ul a:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
             transform: translateY(-100%);
     text-align: center;
   }
@@ -132,12 +131,10 @@ header nav ul a:hover {
   }
   header nav.open {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
             transform: translateY(0);
   }
   header .burger.open span:nth-child(1) {
     -webkit-transform: rotate(45deg) translate(12px, 6px);
-        -ms-transform: rotate(45deg) translate(12px, 6px);
             transform: rotate(45deg) translate(12px, 6px);
   }
   header .burger.open span:nth-child(2) {
@@ -145,7 +142,6 @@ header nav ul a:hover {
   }
   header .burger.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(12px, -6px);
-        -ms-transform: rotate(-45deg) translate(12px, -6px);
             transform: rotate(-45deg) translate(12px, -6px);
   }
 }
@@ -180,7 +176,7 @@ header nav ul a:hover {
 #hero .btn {
   display: inline-block;
   padding: 12px 25px;
-  background: #007bff;
+  background: #45a049;
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
@@ -189,7 +185,78 @@ header nav ul a:hover {
   transition: 0.3s;
 }
 #hero .btn:hover {
-  background: #0062cc;
+  background: #367c39;
+}
+
+#description {
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  background-image: url("../images/sofa.webp");
+  background-size: cover; /* фон будет растянут по ширине и высоте */
+  background-position: center center; /* фон будет расположен по центру */
+  background-repeat: no-repeat; /* предотвратит повторение изображения */
+  height: 629px;
+}
+#description .content-container {
+  max-width: 1200px; /* максимальная ширина контента */
+  margin: 0 auto;
+  padding: 88px 14px 0 81px;
+}
+#description .content-container .section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+#description .content-container .section-header .main-title {
+  color: #000000;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.6px;
+  text-align: start;
+}
+#description .content-container .features {
+  margin-bottom: 16px;
+}
+#description .content-container .features__list {
+  text-align: start;
+  padding: 0;
+  margin: 0;
+}
+#description .content-container .features__list .features__item {
+  font-size: 1rem;
+  padding: 4px 0;
+}
+#description .content-container .features__list .features__item:last-child {
+  border-bottom: none;
+}
+#description .content-container .divider {
+  text-align: start;
+}
+#description .content-container .divider__line {
+  color: #000000;
+  font-size: 1.5rem;
+}
+#description .content-container .cta {
+  text-align: start;
+  margin: 42px 0 20px 0;
+}
+#description .content-container .cta .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #45a049;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+#description .content-container .cta .btn:hover {
+  background-color: #367c39;
+}
+#description .content-container .content-container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .advantages {
@@ -201,8 +268,6 @@ header nav ul a:hover {
   /* 🔹 Адаптив для маленьких екранів (макс. 480px) */
 }
 .advantages .advantages-title h2 {
-  font-size: 36px;
-  font-weight: 500;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -327,10 +392,10 @@ header nav ul a:hover {
 }
 #services .services-title p {
   text-align: center;
-  margin-bottom: 101px;
+  margin-bottom: 53px;
   font-size: 24px;
   font-weight: 300;
-  line-height: 61px;
+  line-height: 1.5;
 }
 #services .services-list {
   display: -webkit-box;
@@ -360,7 +425,6 @@ header nav ul a:hover {
 }
 #services .service:hover {
   -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
           transform: translateY(-5px);
 }
 #services .service img {
@@ -392,7 +456,6 @@ header nav ul a:hover {
   color: #333;
   opacity: 0;
   -webkit-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
           transform: translateY(-30px);
   -webkit-animation: fadeInUp 1s forwards;
           animation: fadeInUp 1s forwards;
@@ -403,7 +466,6 @@ header nav ul a:hover {
   color: #333;
   opacity: 0;
   -webkit-transform: translateY(30px);
-      -ms-transform: translateY(30px);
           transform: translateY(30px);
   -webkit-animation: fadeInUp 1s forwards;
           animation: fadeInUp 1s forwards;
@@ -435,7 +497,6 @@ header nav ul a:hover {
 }
 #portfolio .container .gallery .gallery-item:hover img {
   -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
           transform: scale(1.05);
 }
 
@@ -454,14 +515,29 @@ header nav ul a:hover {
             transform: translateY(0);
   }
 }
-.service-package-works {
+#service-package .service-package-title {
+  margin: 30px 0;
+}
+#service-package .service-package-title h2 {
+  padding: 10px 0;
+}
+#service-package .service-package-title p {
+  text-align: center;
+  padding: 10px 0;
+}
+#service-package .service-package-works {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.service-package-works .package-works {
+#service-package .service-package-works .package-works {
   width: 33%;
-  padding: 10px;
+  padding: 21px;
+  text-align: start;
+}
+#service-package .service-package-works .package-works .package-works-title {
+  text-align: center;
+  margin: 0 0 28px 0;
 }
 
 /* Кнопка для виклику модального вікна */
@@ -655,14 +731,12 @@ footer .container {
   /* Показываем кнопку */
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
 
 .scroll-to-top.hidden {
   opacity: 0;
   -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
 
@@ -700,15 +774,28 @@ body section p {
   text-align: start;
 }
 body section h1 {
-  font-size: 40px;
-  text-align: center;
-  padding: 102px 0 0;
-  margin-bottom: 30px;
+  color: #000000;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.6px;
 }
 body section h2 {
+  color: #000000;
+  font-size: 42px;
   font-weight: 400;
+  line-height: 44px;
+  letter-spacing: -0.42px;
+}
+body section h3 {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: -0.42px;
 }
 body section h4 {
-  font-size: 26px;
-  text-align: left;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: -0.42px;
 }/*# sourceMappingURL=main.css.map */
