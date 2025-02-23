@@ -39,3 +39,18 @@
 		}
 	}
 }
+@media (max-width: 768px) {
+	#hero {
+		.container {
+			margin-top: 62px;
+			h2 {
+				font-size: 1.9rem;
+				margin-bottom: 0;
+				font-weight: 100;
+			}
+			p:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+}

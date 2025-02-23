@@ -24,7 +24,12 @@ $fade-in-delay: 0.3s;
     }
 
     .animated-description {
-      font-size: 1.2rem;
+      color: #666;
+      width: 71%;
+      font-size: 20px;
+      text-align: center;
+      margin: 0 auto;
+
       margin-top: 20px;
       color: $text-color;
       opacity: 0;

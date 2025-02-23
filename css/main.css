@@ -73,6 +73,8 @@ header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -106,6 +108,9 @@ header nav ul a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  header .container .open-modal-btn {
+    display: none;
   }
   header nav {
     position: fixed;
@@ -188,6 +193,19 @@ header nav ul a:hover {
   background: #367c39;
 }
 
+@media (max-width: 768px) {
+  #hero .container {
+    margin-top: 62px;
+  }
+  #hero .container h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+  #hero .container p:nth-child(2) {
+    display: none;
+  }
+}
 #description {
   padding: 20px;
   font-family: "Roboto", sans-serif;
@@ -196,6 +214,7 @@ header nav ul a:hover {
   background-position: center center; /* фон будет расположен по центру */
   background-repeat: no-repeat; /* предотвратит повторение изображения */
   height: 629px;
+  margin-bottom: 50px;
 }
 #description .content-container {
   max-width: 1200px; /* максимальная ширина контента */
@@ -272,7 +291,11 @@ header nav ul a:hover {
   margin-bottom: 30px;
 }
 .advantages .advantages-title p {
+  color: #666;
+  width: 71%;
+  font-size: 20px;
   text-align: center;
+  margin: 0 auto;
 }
 .advantages .advantages-item {
   display: block;
@@ -382,31 +405,29 @@ header nav ul a:hover {
 }
 
 #services {
-  background: #f8f9fa;
   padding: 60px 20px;
   text-align: center;
 }
-#services .services-title h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+#services .container .services-title h2 {
+  margin-bottom: 42px;
 }
-#services .services-title p {
+#services .container .services-title p {
+  color: #666;
+  width: 71%;
+  font-size: 20px;
   text-align: center;
-  margin-bottom: 53px;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1.5;
+  margin: 0 auto;
 }
-#services .services-list {
+#services .container .services-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 26px;
 }
-#services .service {
+#services .container .services-list .service {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -417,28 +438,51 @@ header nav ul a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 25%;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  width: 30%;
+  margin: 10px;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
-#services .service:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+#services .container .services-list .service:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
-#services .service img {
+#services .container .services-list .service > div img {
   width: 100%;
-  height: 178px;
-  border-radius: 5px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 15px;
 }
-#services .service h3 {
-  margin: 15px 0;
+#services .container .services-list .service > div h3 {
   font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-#services .service p {
-  font-size: 1rem;
+#services .container .services-list .service > div p {
   color: #666;
+  font-size: 1rem;
+  text-align: center;
+}
+#services .container .services-list .service .open-modal-btn {
+  display: block;
+  margin: 15px auto;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+#services .container .services-list .service .open-modal-btn:hover {
+  background-color: #0056b3;
 }
 
 #portfolio {
@@ -461,7 +505,11 @@ header nav ul a:hover {
           animation: fadeInUp 1s forwards;
 }
 #portfolio .container .animated-description {
-  font-size: 1.2rem;
+  color: #666;
+  width: 71%;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
   margin-top: 20px;
   color: #333;
   opacity: 0;
@@ -515,29 +563,200 @@ header nav ul a:hover {
             transform: translateY(0);
   }
 }
-#service-package .service-package-title {
-  margin: 30px 0;
+#reviews {
+  margin-bottom: 80px;
 }
-#service-package .service-package-title h2 {
-  padding: 10px 0;
-}
-#service-package .service-package-title p {
+
+.service-package-title {
   text-align: center;
-  padding: 10px 0;
+  margin-bottom: 40px;
 }
-#service-package .service-package-works {
+.service-package-title h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 45px;
+}
+.service-package-title p {
+  color: #666;
+  width: 71%;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.service-package-works .package-works {
+  width: 100%;
+  margin: 10px;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  /* Уникальные стили для каждого блока */
+}
+.service-package-works .package-works .package-works-title {
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.service-package-works .package-works .package-works-body {
+  padding: 20px;
+}
+.service-package-works .package-works .package-works-body .list-of-works {
+  max-width: 1170px;
+  margin: 0 auto;
+  list-style: none;
+  text-align: start;
+  margin-bottom: 55px;
+}
+.service-package-works .package-works .package-works-price p {
+  font-size: 1.5rem;
+  color: #007bff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.service-package-works .package-works .package-works-price span {
+  font-size: 1rem;
+  color: #333;
+}
+.service-package-works .package-works .package-works-discription {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 20px;
+}
+.service-package-works .package-works .package-works-item {
+  font-size: 1rem;
+  color: #444;
+  padding: 5px 0;
+}
+.service-package-works .package-works .package-works-item::before {
+  content: "✔";
+  color: #28a745;
+  margin-right: 8px;
+}
+.service-package-works .package-works .econom-backgr {
+  background-image: url("../images/econ.jpg");
+}
+.service-package-works .package-works .standart-backgr {
+  background-image: url("../images/standart.jpg");
+}
+.service-package-works .package-works .premium-backgr {
+  background-image: url("../images/prem.jpg");
+}
+.service-package-works .package-works .common-backgr {
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 105px;
+}
+.service-package-works .package-works .common-backgr .common-title {
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", Sans-serif;
+  font-size: 74px;
+  font-weight: 600;
+  z-index: 2;
+}
+.service-package-works .package-works .common-backgr .common-descr {
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", Sans-serif;
+  font-size: 20px;
+  font-weight: 30;
+  z-index: 2;
+}
+.service-package-works .package-works .common-backgr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.stages {
+  margin-bottom: 52px;
+}
+.stages .stages-title h2 {
+  margin: 106px 0 105px 0;
+}
+.stages .stages-title p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 53px;
+}
+.stages .stages-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-#service-package .service-package-works .package-works {
-  width: 33%;
-  padding: 21px;
-  text-align: start;
+.stages .stages {
+  width: 25%;
 }
-#service-package .service-package-works .package-works .package-works-title {
-  text-align: center;
-  margin: 0 0 28px 0;
+.stages .custom-line-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stages .custom-line-item_circle {
+  width: 30px;
+  height: 30px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+.stages .custom-line-item_line {
+  height: 2px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #4caf50;
+}
+.stages .custom-line_text {
+  text-align: start;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #666;
+}
+.stages .custom-line_text .custom-line_text__title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.stages .custom-line_text p {
+  padding: 0 64px 0 0;
 }
 
 /* Кнопка для виклику модального вікна */
@@ -547,7 +766,7 @@ header nav ul a:hover {
   color: white;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  text-decoration: none;
   cursor: pointer;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -561,36 +780,79 @@ header nav ul a:hover {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
-  -webkit-animation: fadeIn 0.5s ease-out;
-          animation: fadeIn 0.5s ease-out;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
-
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
+.modal .modal-content {
+  background-color: #fff;
+  margin: 5% auto;
   padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  -webkit-animation: slideIn 0.5s ease-out;
-          animation: slideIn 0.5s ease-out;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  -webkit-animation: fadeIn 0.3sease-in-out;
+          animation: fadeIn 0.3sease-in-out;
+  /* Кнопка закриття */
+}
+.modal .modal-content .close {
+  color: #555;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: color 0.3sease;
+  transition: color 0.3sease;
+}
+.modal .modal-content .modal-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.modal .modal-content .modal-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.5;
 }
 
-/* Кнопка закриття */
-.close-btn {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: relative;
-  top: -14px;
-  right: -242px;
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+form .phone {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  width: 100%;
+  -webkit-transition: border-color 0.3sease;
+  transition: border-color 0.3sease;
+}
+form button.send-form {
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
   cursor: pointer;
+  -webkit-transition: background-color 0.3sease;
+  transition: background-color 0.3sease;
 }
 
 .close-btn:hover,
@@ -637,6 +899,176 @@ header nav ul a:hover {
             transform: translateY(0);
   }
 }
+.contact-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../images/bgrcontact.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 60px 20px;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Добавляем затемнение на весь фон */
+}
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.contact-section .contact-wrapper {
+  width: 100%;
+  max-width: 786px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 2; /* Контент поверх затемнения */
+}
+.contact-section .contact-wrapper .contact-content {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.contact-section .contact-wrapper .contact-content h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.contact-section .contact-wrapper .contact-content p {
+  font-size: 18px;
+  color: #fff;
+}
+.contact-section .contact-wrapper .contact-form {
+  width: 100%;
+}
+.contact-section .contact-wrapper .contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.contact-section .contact-wrapper .contact-form form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.contact-section .contact-wrapper .contact-form form .form-group input {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 150px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+.contact-section .contact-wrapper .contact-form form .form-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+.contact-section .contact-wrapper .contact-form form .form-group .submit-btn {
+  width: 100%;
+  max-width: 150px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.contact-section .contact-wrapper .contact-form form .form-group .submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 15px;
+    height: auto;
+  }
+  .contact-section .contact-wrapper {
+    max-width: 100%;
+  }
+  .contact-section .contact-wrapper .contact-content h2 {
+    font-size: 28px;
+  }
+  .contact-section .contact-wrapper .contact-content p {
+    font-size: 16px;
+  }
+  .contact-section .contact-wrapper .contact-form form .form-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-section .contact-wrapper .contact-form form .form-group .submit-btn {
+    max-width: none;
+  }
+}
+#about .container .about-block-title {
+  margin-bottom: 54px;
+}
+#about .container .about-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#about .container .about-block .about-block-description {
+  margin-right: 41px;
+}
+#about .container .about-block .about-block-img {
+  width: 100%;
+  height: 326px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 85px;
+}
+
 /* Стилі для форми */
 form {
   display: -webkit-box;
@@ -659,16 +1091,14 @@ input[type=tel] {
   margin-top: 5px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 button[type=submit] {
   padding: 10px;
   margin-top: 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }
@@ -678,12 +1108,17 @@ button[type=submit]:hover {
 }
 
 footer .container {
-  background-color: rgb(100, 100, 100);
-  text-align: center;
-  height: 120px;
-  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ebebeb;
+  text-align: center;
+  height: 281px;
+  color: white;
   display: flex; /* Включаем flexbox */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -691,6 +1126,21 @@ footer .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; /* Выравнивание по вертикали */
+}
+footer .container .phone_mail {
+  color: black;
+  font-family: "Roboto", Sans-serif;
+  font-size: 42px;
+}
+footer .container .phone_mail a {
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto", Sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+}
+footer .container p {
+  color: black;
 }
 
 /* --------------Кнопка прокрутки вверх--------------------- */
@@ -755,6 +1205,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {

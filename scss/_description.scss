@@ -11,95 +11,87 @@ $section-padding: 20px;
 #description {
   padding: $section-padding;
   font-family: $font-family;
-  background-image: url('../images/sofa.webp');
+  background-image: url("../images/sofa.webp");
   background-size: cover; /* фон будет растянут по ширине и высоте */
   background-position: center center; /* фон будет расположен по центру */
   background-repeat: no-repeat; /* предотвратит повторение изображения */
   height: 629px;
-  
- 
+  margin-bottom: 50px;
 
-  .content-container { 
+  .content-container {
     max-width: $max-width; /* максимальная ширина контента */
     margin: 0 auto;
     padding: 88px 14px 0 81px;
-  
-  
-  
 
+    // Заголовок секции
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
 
-  // Заголовок секции
-  .section-header {
-    text-align: center;
-    margin-bottom: 48px;
+      .main-title {
+        color: #000000;
 
-    .main-title {
-      color: #000000;
-      
-      font-size: 60px;
-      font-weight: 400;
-      line-height: 1em;
-      letter-spacing: -0.6px;
-     text-align: start;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 1em;
+        letter-spacing: -0.6px;
+        text-align: start;
+      }
     }
-  }
 
-  // Блок со списком преимуществ
-  .features {
-    margin-bottom: 16px;
+    // Блок со списком преимуществ
+    .features {
+      margin-bottom: 16px;
 
-    &__list {
-      // list-style: none;
-      text-align: start;
-      padding: 0;
-      margin: 0;
+      &__list {
+        // list-style: none;
+        text-align: start;
+        padding: 0;
+        margin: 0;
 
-      .features__item {
-        font-size: 1rem;
-        padding: 4px 0;
-        
+        .features__item {
+          font-size: 1rem;
+          padding: 4px 0;
 
-        &:last-child {
-          border-bottom: none;
+          &:last-child {
+            border-bottom: none;
+          }
         }
       }
     }
-  }
-// Разделитель (линия)
-.divider {
-  text-align: start;
-  // margin: 20px 0;
+    // Разделитель (линия)
+    .divider {
+      text-align: start;
+      // margin: 20px 0;
 
-  &__line {
-    color: $divider-color;
-    font-size: 1.5rem;
-    // letter-spacing: 5px;
-  }
-}
-.cta{
-  text-align: start;
-  margin: 42px 0 20px 0;
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: $btn-bg-color;
-      color: $btn-text-color;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: darken($btn-bg-color, 10%);
+      &__line {
+        color: $divider-color;
+        font-size: 1.5rem;
+        // letter-spacing: 5px;
       }
     }
- }
-  .content-container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+    .cta {
+      text-align: start;
+      margin: 42px 0 20px 0;
 
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: $btn-bg-color;
+        color: $btn-text-color;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
 
-}
+        &:hover {
+          background-color: darken($btn-bg-color, 10%);
+        }
+      }
+    }
+    .content-container {
+      max-width: 1170px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+  }
 }

@@ -1,26 +1,43 @@
-//  ------------modal--------------------
-// Отримуємо елементи
-const modal = document.getElementById("contactModal");
-const openModalBtn = document.querySelectorAll(".open-modal-btn");
-const closeModalBtn = document.getElementById("closeModalBtn");
+// -----------------Modal-------------------------
 
-openModalBtn.forEach(btn => {
-	btn.addEventListener("click", function () {
-		modal.style.display = "block";
-	})
-})
+// // Получаем элементы
+const modal1 = document.getElementById("consultationModal1");
+// // const modal2 = document.getElementById("consultationModal2");
+// const openModalButton = document.querySelectorAll(".pupap-consultation_mail");
+const openModalButtonReview = document.querySelector(".pupap-consultation_review");
+const closeModalButton1 = modal1.querySelector(".close");
+// const closeModalButton2 = modal2.querySelector(".close");
 
-// Закриття модального вікна
-closeModalBtn.onclick = function () {
-	modal.style.display = "none";
-}
+// Открытие модальных окон
+openModalButtonReview.addEventListener("click", () => {
+	modal1.style.display = "block";
 
-// Закриття модального вікна при натисканні поза ним
-window.onclick = function (event) {
-	if (event.target === modal) {
-		modal.style.display = "none";
+});
+
+// // openModalButton.forEach(elem => {
+// // 	elem.addEventListener("click", () => {
+// // 		modal2.style.display = "block";
+// // 	});
+// // });
+
+// Закрытие модальных окон
+closeModalButton1.addEventListener("click", () => {
+	modal1.style.display = "none";
+});
+
+// closeModalButton2.addEventListener("click", () => {
+// 	modal2.style.display = "none";
+// });
+
+// Закрытие модальных окон при клике вне их
+window.addEventListener("click", (event) => {
+	if (event.target === modal1) {
+		modal1.style.display = "none";
 	}
-}
+	// else if (event.target === modal2) {
+	// 	modal2.style.display = "none";
+	// }
+});
 
 
 

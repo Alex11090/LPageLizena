@@ -1,0 +1,134 @@
+.contact-section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: url("../images/bgrcontact.jpg") no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	padding: 60px 20px;
+	text-align: center;
+	// border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	width: 100%;
+
+	/* Добавляем затемнение на весь фон */
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+
+	.contact-wrapper {
+		width: 100%;
+		max-width: 786px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		// border-radius: 8px;
+		position: relative;
+		z-index: 2; /* Контент поверх затемнения */
+
+		.contact-content {
+			margin-bottom: 30px;
+			text-align: center;
+			h2 {
+				font-size: 36px;
+				color: #fff;
+				margin-bottom: 15px;
+			}
+			p {
+				font-size: 18px;
+				color: #fff;
+			}
+		}
+
+		.contact-form {
+			width: 100%;
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+
+				.form-group {
+					display: flex;
+					align-items: baseline;
+					width: 100%;
+					gap: 10px;
+					margin-bottom: 15px;
+					flex-wrap: wrap;
+
+					input {
+						width: 100%;
+						flex: 1;
+						min-width: 150px;
+						font-size: 1rem;
+						border: 1px solid #ccc;
+
+						transition: border-color 0.3s ease;
+						&:focus {
+							border-color: #4caf50;
+							outline: none;
+						}
+					}
+					.submit-btn {
+						width: 100%;
+						max-width: 150px;
+						padding: 12px 20px;
+						font-size: 1rem;
+						color: white;
+						background-color: #4caf50;
+						border: none;
+
+						cursor: pointer;
+						transition: background-color 0.3s ease;
+						&:hover {
+							background-color: #45a049;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+	.contact-section {
+		padding: 40px 15px;
+		height: auto;
+		.contact-wrapper {
+			max-width: 100%;
+
+			.contact-content {
+				h2 {
+					font-size: 28px;
+				}
+			}
+			.contact-content {
+				p {
+					font-size: 16px;
+				}
+			}
+			.contact-form {
+				form {
+					.form-group {
+						flex-direction: column;
+						.submit-btn {
+							max-width: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

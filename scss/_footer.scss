@@ -1,12 +1,29 @@
 footer {
 	.container {
-		background-color: rgb(100, 100, 100);
+		display: flex;
+		flex-direction: column;
+		background-color: #ebebeb;
 		text-align: center;
-		height: 120px;
+		height: 281px;
 		color: white;
 
 		display: flex; /* Включаем flexbox */
 		justify-content: center; /* Выравнивание по горизонтали */
 		align-items: center; /* Выравнивание по вертикали */
+		.phone_mail {
+			color: black;
+			font-family: "Roboto", Sans-serif;
+			font-size: 42px;
+			a {
+				text-decoration: none;
+				color: black;
+				font-family: "Roboto", Sans-serif;
+				font-weight: 500;
+				letter-spacing: 1.3px;
+			}
+		}
+		p {
+			color: black;
+		}
 	}
 }
