@@ -79,3 +79,40 @@ const scrollToTop = () => {
 // Добавляем обработчики событий
 window.addEventListener('scroll', handleScrolls);
 scrollToTopButton.addEventListener('click', scrollToTop);
+
+
+// ----------------Swiper-----------------------------
+let swiper;
+
+function openSlider(index) {
+	document.getElementById("modalSwiper").style.display = "flex";
+	if (!swiper) {
+		swiper = new Swiper(".mySwiper", {
+			loop: true,
+			navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+			autoplay: { delay: 3000 },
+		});
+	}
+	swiper.slideTo(index, 0);
+}
+
+function closeSlider(event) {
+	const modal = document.getElementById("modalSwiper");
+	if (event.target === modal) { // Проверяем, что клик был именно по фону
+		modal.style.display = "none";
+	}
+}
+
+// Добавляем обработчик клика на модальное окно
+document.getElementById("modalSwiper").addEventListener("click", closeSlider);
+
+function closeSliderbtn() {
+	document.getElementById("modalSwiper").style.display = "none";
+}
+
+
+
+
+// -----------анімація-----------------------------
+
+

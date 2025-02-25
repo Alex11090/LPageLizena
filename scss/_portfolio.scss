@@ -13,58 +13,26 @@ $fade-in-delay: 0.3s;
     width: 80%;
     margin: 0 auto;
     text-align: center;
-
-    .animated-title {
-      font-size: 42px;
-      // font-weight: bold;
-      color: $text-color;
-      opacity: 0;
-      transform: translateY(-30px);
-      animation: fadeInUp $fade-in-duration forwards;
-    }
-
-    .animated-description {
-      color: #666;
-      width: 71%;
-      font-size: 20px;
-      text-align: center;
-      margin: 0 auto;
-
-      margin-top: 20px;
-      color: $text-color;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp $fade-in-duration forwards;
-      animation-delay: $fade-in-delay;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat($gallery-columns, 1fr);
-      gap: $gap;
-      margin-top: 40px;
-
-      @media (max-width: 768px) {
-        @media (max-width: 768px) {
-          grid-template-columns: 1fr; // На мобильных будет 1 колонка (вертикально)
-        }
+    .portfolio-header {
+      margin: 63px 0;
+      .animated-title {
+        font-size: 42px;
+        font-weight: 400;
       }
-
-      .gallery-item {
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        animation: fadeInUp $fade-in-duration forwards;
-
-        img {
-          width: 100%;
-          height: auto;
-          transition: transform 0.3s ease;
-        }
-
-        &:hover img {
-          transform: scale(1.05);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+      img {
+        width: 385px;
+        height: 200px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.1);
         }
       }
     }
@@ -75,5 +43,57 @@ $fade-in-delay: 0.3s;
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/*----------------модалка свайпера---------------------*/
+
+.modalSwipers {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  .modals-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+
+    .close {
+      position: absolute;
+      top: -26x;
+      right: -38px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          img {
+            width: 100%;
+            border-radius: 10px;
+          }
+        }
+      }
+      .swiper-button-prev {
+        color: white; /* Цвет стрелок */
+        width: 50px;
+        height: 50px;
+        left: -60px; /* Смещаем влево за слайдер */
+      }
+      .swiper-button-next {
+        color: white; /* Цвет стрелок */
+        width: 50px;
+        height: 50px;
+        right: -60px; /* Смещаем вправо за слайдер */
+      }
+    }
   }
 }

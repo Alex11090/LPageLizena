@@ -425,6 +425,25 @@ header nav ul a:hover {
   padding: 60px 20px;
   text-align: center;
 }
+#services .section {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
+}
+#services .section .visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+#services .section.visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 #services .container .services-title h2 {
   margin-bottom: 42px;
 }
@@ -520,62 +539,38 @@ header nav ul a:hover {
   margin: 0 auto;
   text-align: center;
 }
-#portfolio .container .animated-title {
-  font-size: 42px;
-  color: #333;
-  opacity: 0;
-  -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
-  -webkit-animation: fadeInUp 1s forwards;
-          animation: fadeInUp 1s forwards;
+#portfolio .container .portfolio-header {
+  margin: 63px 0;
 }
-#portfolio .container .animated-description {
-  color: #666;
-  width: 71%;
-  font-size: 20px;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 20px;
-  color: #333;
-  opacity: 0;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
-  -webkit-animation: fadeInUp 1s forwards;
-          animation: fadeInUp 1s forwards;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+#portfolio .container .portfolio-header .animated-title {
+  font-size: 42px;
+  font-weight: 400;
 }
 #portfolio .container .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 22px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-@media (max-width: 768px) and (max-width: 768px) {
-  #portfolio .container .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-#portfolio .container .gallery .gallery-item {
-  overflow: hidden;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  -webkit-animation: fadeInUp 1s forwards;
-          animation: fadeInUp 1s forwards;
-}
-#portfolio .container .gallery .gallery-item img {
-  width: 100%;
-  height: auto;
+#portfolio .container .gallery img {
+  width: 385px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-#portfolio .container .gallery .gallery-item:hover img {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+#portfolio .container .gallery img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @-webkit-keyframes fadeInUp {
@@ -593,6 +588,54 @@ header nav ul a:hover {
             transform: translateY(0);
   }
 }
+/*----------------модалка свайпера---------------------*/
+.modalSwipers {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+.modalSwipers .modals-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+.modalSwipers .modals-content .close {
+  position: absolute;
+  top: -26x;
+  right: -38px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+.modalSwipers .modals-content .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+.modalSwipers .modals-content .swiper .swiper-button-prev {
+  color: white; /* Цвет стрелок */
+  width: 50px;
+  height: 50px;
+  left: -60px; /* Смещаем влево за слайдер */
+}
+.modalSwipers .modals-content .swiper .swiper-button-next {
+  color: white; /* Цвет стрелок */
+  width: 50px;
+  height: 50px;
+  right: -60px; /* Смещаем вправо за слайдер */
+}
+
 #reviews {
   margin-bottom: 80px;
 }
