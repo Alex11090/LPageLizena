@@ -95,3 +95,19 @@ $section-padding: 20px;
     }
   }
 }
+
+@media (max-width: 768px) {
+  #description {
+    .content-container {
+      padding: 0;
+      .section-header {
+        .main-title {
+          font-size: 28px;
+        }
+      }
+      .divider {
+        display: none;
+      }
+    }
+  }
+}

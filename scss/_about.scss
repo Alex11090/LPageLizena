@@ -1,3 +1,4 @@
+/* ---------------про нас--------------------*/
 #about {
 	h2 {
 	}
@@ -7,6 +8,8 @@
 		}
 		.about-block {
 			display: flex;
+			gap: 24px;
+
 			.about-block-description {
 				margin-right: 41px;
 			}
@@ -15,6 +18,20 @@
 				height: 326px;
 				object-fit: cover;
 				margin-bottom: 85px;
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	#about {
+		.container {
+			.about-block {
+				flex-wrap: wrap;
+				padding: 0 5px;
+
+				.about-block-description {
+					margin-right: 0;
+				}
 			}
 		}
 	}

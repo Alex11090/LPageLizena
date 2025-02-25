@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Будівництво та ремонт під ключ</title>
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> -->
@@ -34,7 +36,7 @@
 				<ul>
 					<li><a href="#services">Послуги</a></li>
 					<li><a href="#portfolio">Портфоліо</a></li>
-					<li><a href="#price">Ціни</a></li>
+					<li><a href="#service-package">Ціни</a></li>
 					<li><a href="#reviews">Відгуки</a></li>
 					<li><a href="#about">Про нас</a></li>
 					<li><a href="#contact">Контакти</a></li>
@@ -170,7 +172,7 @@
 			<div class="package-works">
 				<div class="common-backgr econom-backgr">
 					<p class="common-title">Економ</p>
-					<p class="common-descr">від 95 $/м2 </p>
+					<p class="common-descr">Ремонт пакет Еконм від 95 $/м2 </p>
 				</div>
 				<div class="package-works-title">Пакет Економ</div>
 				<div class="package-works-body">
@@ -199,7 +201,7 @@
 			<div class="package-works">
 				<div class="common-backgr standart-backgr">
 					<p class="common-title">Стандарт</p>
-					<p class="common-descr">Пакет включає усі основні роботи </p>
+					<p class="common-descr">Пакет включає усі основні роботи від 150 $/m2 </p>
 				</div>
 				<div class="package-works-title">Пакет Стандарт</div>
 				<div class="package-works-body">
@@ -229,7 +231,7 @@
 			<div class="package-works">
 				<div class="common-backgr premium-backgr">
 					<p class="common-title">Преміум</p>
-					<p class="common-descr">Пакет включає усі основні роботи </p>
+					<p class="common-descr">Пакет включає усі основні роботи від 250 $/m2</p>
 				</div>
 				<div class="package-works-title">Пакет Преміум</div>
 				<div class="package-works-body">
@@ -492,7 +494,7 @@
 		</div>
 
 		<div class="stages-list">
-			<div class="stages">
+			<div class="stage">
 				<div class="custom-line-item">
 					<div class="custom-line-item_circle">1</div>
 					<div class="custom-line-item_line"></div>
@@ -505,7 +507,7 @@
 				</div>
 			</div>
 
-			<div class="stages">
+			<div class="stage">
 				<div class="custom-line-item">
 					<div class="custom-line-item_circle">2</div>
 					<div class="custom-line-item_line"></div>
@@ -518,7 +520,7 @@
 				</div>
 			</div>
 
-			<div class="stages">
+			<div class="stage">
 				<div class="custom-line-item">
 					<div class="custom-line-item_circle">3</div>
 					<div class="custom-line-item_line"></div>
@@ -531,7 +533,7 @@
 				</div>
 			</div>
 
-			<div class="stages">
+			<div class="stage">
 				<div class="custom-line-item">
 
 					<div class="custom-line-item_circle">4</div>
@@ -574,7 +576,7 @@
 
 					Надаємо повний спектр послуг від розробки дизайну інтер'єру до ремонту. Досвід роботи більше 10
 					років.
-					Звертайтесь до «Теплий Дім і ви не пожалкуєте!</p>
+					Звертайтесь до Lizena і ви не пожалкуєте!</p>
 				<img class="about-block-img" src="./images/background.jpg" />
 			</div>
 		</div>
@@ -616,28 +618,10 @@
 	</div>
 
 	<!-- ---------------загрузка карты------------------------ -->
-	<div id="map" style="height: 400px; width: 100%;"></div>
-
-	<script>
-		function initMap() {
-			const location = { lat: 49.8397, lng: 24.0297 }; // Координаты Львова
-			const map = new google.maps.Map(document.getElementById("map"), {
-				zoom: 12, // Масштаб карты
-				center: location, // Центр карты
-			});
-
-			const marker = new google.maps.Marker({
-				position: location, // Позиция маркера
-				map: map,
-				title: "Львов, Украина", // Подсказка при наведении
-			});
-		}
-	</script>
-
-	<!-- Подключаем скрипт Google Maps API с параметром для украинского языка -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdDH3iAKQVdyZ9lIe3QICSVEDIeIpb7D0&callback=initMap&language=uk"
-		async defer></script>
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5144.725874781737!2d24.067114479679557!3d49.854425698207805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add2638bf4b4b%3A0xc574003db8d95a2d!2z0LLRg9C70LjRhtGPINCR0L7Qs9C00LDQvdGW0LLRgdGM0LrQsCwgMTHQkCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1740480479443!5m2!1suk!2sua"
+		width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 	<footer>
 		<div class="container">

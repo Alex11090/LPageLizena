@@ -55,7 +55,7 @@
 // 		}
 // 	}
 // }
-// -----------------------------------------------------------------
+/* ----------------------наші послуги-------------------------------------------*/
 #services {
 	// background: #f8f9fa;
 	padding: 60px 20px;
@@ -130,8 +130,22 @@
 					transition: background-color 0.3s ease;
 
 					&:hover {
-						background-color: #0056b3;
+						background-color: #45a049;
 					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	#services {
+		.container {
+			.services-title {
+			}
+			.services-list {
+				flex-wrap: wrap;
+				.service {
+					width: 100%;
 				}
 			}
 		}

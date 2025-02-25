@@ -2,6 +2,10 @@
   padding: 0;
   position: relative;
   margin: 80px 0;
+
+  @media (max-width: 768px) {
+    margin: 8px 0;
+  }
   .advantages-title {
     h2 {
       // font-size: 36px;

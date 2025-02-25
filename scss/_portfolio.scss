@@ -6,7 +6,7 @@ $fade-in-duration: 1s;
 $fade-in-delay: 0.3s;
 
 #portfolio {
-  padding: 60px 0;
+  margin: 96px auto;
   background-color: $background-color;
 
   .container {
@@ -15,8 +15,8 @@ $fade-in-delay: 0.3s;
     text-align: center;
 
     .animated-title {
-      font-size: 2.5rem;
-      font-weight: bold;
+      font-size: 42px;
+      // font-weight: bold;
       color: $text-color;
       opacity: 0;
       transform: translateY(-30px);
@@ -43,6 +43,12 @@ $fade-in-delay: 0.3s;
       grid-template-columns: repeat($gallery-columns, 1fr);
       gap: $gap;
       margin-top: 40px;
+
+      @media (max-width: 768px) {
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr; // На мобильных будет 1 колонка (вертикально)
+        }
+      }
 
       .gallery-item {
         overflow: hidden;

@@ -278,6 +278,17 @@ header nav ul a:hover {
   padding: 0 15px;
 }
 
+@media (max-width: 768px) {
+  #description .content-container {
+    padding: 0;
+  }
+  #description .content-container .section-header .main-title {
+    font-size: 28px;
+  }
+  #description .content-container .divider {
+    display: none;
+  }
+}
 .advantages {
   padding: 0;
   position: relative;
@@ -285,6 +296,11 @@ header nav ul a:hover {
   /* 🔹 Адаптив для планшетів (макс. 1024px) */
   /* 🔹 Адаптив для мобільних пристроїв (макс. 768px) */
   /* 🔹 Адаптив для маленьких екранів (макс. 480px) */
+}
+@media (max-width: 768px) {
+  .advantages {
+    margin: 8px 0;
+  }
 }
 .advantages .advantages-title h2 {
   text-align: center;
@@ -404,6 +420,7 @@ header nav ul a:hover {
   }
 }
 
+/* ----------------------наші послуги-------------------------------------------*/
 #services {
   padding: 60px 20px;
   text-align: center;
@@ -482,11 +499,20 @@ header nav ul a:hover {
   transition: background-color 0.3s ease;
 }
 #services .container .services-list .service .open-modal-btn:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
 
+@media (max-width: 768px) {
+  #services .container .services-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #services .container .services-list .service {
+    width: 100%;
+  }
+}
 #portfolio {
-  padding: 60px 0;
+  margin: 96px auto;
   background-color: #f4f4f4;
 }
 #portfolio .container {
@@ -495,8 +521,7 @@ header nav ul a:hover {
   text-align: center;
 }
 #portfolio .container .animated-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 42px;
   color: #333;
   opacity: 0;
   -webkit-transform: translateY(-30px);
@@ -525,6 +550,11 @@ header nav ul a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 40px;
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  #portfolio .container .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 #portfolio .container .gallery .gallery-item {
   overflow: hidden;
@@ -566,13 +596,18 @@ header nav ul a:hover {
 #reviews {
   margin-bottom: 80px;
 }
+#reviews .container p {
+  text-align: center;
+  margin-top: 30px;
+}
 
 .service-package-title {
   text-align: center;
   margin-bottom: 40px;
 }
 .service-package-title h2 {
-  font-size: 2.2rem;
+  font-size: 42px;
+  font-weight: 400;
   color: #333;
   margin-bottom: 45px;
 }
@@ -586,7 +621,6 @@ header nav ul a:hover {
 
 .service-package-works .package-works {
   width: 100%;
-  margin: 10px;
   -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -596,8 +630,7 @@ header nav ul a:hover {
 .service-package-works .package-works .package-works-title {
   color: rgb(0, 0, 0);
   padding: 15px;
-  font-size: 2.2rem;
-  font-weight: bold;
+  font-size: 36px;
   text-align: center;
 }
 .service-package-works .package-works .package-works-body {
@@ -612,7 +645,7 @@ header nav ul a:hover {
 }
 .service-package-works .package-works .package-works-price p {
   font-size: 1.5rem;
-  color: #007bff;
+  color: #4caf50;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
@@ -692,11 +725,18 @@ header nav ul a:hover {
   z-index: 1;
 }
 
+/*------------етапи----------------------*/
 .stages {
   margin-bottom: 52px;
 }
 .stages .stages-title h2 {
   margin: 106px 0 105px 0;
+}
+@media (max-width: 768px) {
+  .stages .stages-title h2 {
+    font-size: 35px;
+    margin: 74px 0 74px 0;
+  }
 }
 .stages .stages-title p {
   font-size: 24px;
@@ -708,9 +748,34 @@ header nav ul a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
 }
-.stages .stages {
+@media (max-width: 768px) {
+  .stages .stages-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+}
+.stages .stage {
   width: 25%;
+}
+@media (max-width: 768px) {
+  .stages .stage {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 31px;
+  }
 }
 .stages .custom-line-item {
   display: -webkit-box;
@@ -720,9 +785,20 @@ header nav ul a:hover {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 768px) {
+  .stages .custom-line-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .stages .custom-line-item_circle {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: #4caf50;
   color: white;
   border-radius: 50%;
@@ -736,6 +812,14 @@ header nav ul a:hover {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.2rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .stages .custom-line-item_circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
 }
 .stages .custom-line-item_line {
   height: 2px;
@@ -744,11 +828,22 @@ header nav ul a:hover {
           flex-grow: 1;
   background-color: #4caf50;
 }
+@media (max-width: 768px) {
+  .stages .custom-line-item_line {
+    width: 2px;
+    height: 88px;
+  }
+}
 .stages .custom-line_text {
   text-align: start;
   margin-top: 20px;
   font-size: 1rem;
   color: #666;
+}
+@media (max-width: 768px) {
+  .stages .custom-line_text {
+    margin-top: 7px;
+  }
 }
 .stages .custom-line_text .custom-line_text__title {
   font-size: 1.2rem;
@@ -757,6 +852,16 @@ header nav ul a:hover {
 }
 .stages .custom-line_text p {
   padding: 0 64px 0 0;
+}
+@media (max-width: 768px) {
+  .stages .custom-line_text p {
+    padding: 0;
+  }
+}
+@media (max-width: 768) {
+  .stages .custom-line_text {
+    margin-top: 7px;
+  }
 }
 
 /* Кнопка для виклику модального вікна */
@@ -1050,6 +1155,7 @@ form button.send-form {
     max-width: none;
   }
 }
+/* ---------------про нас--------------------*/
 #about .container .about-block-title {
   margin-bottom: 54px;
 }
@@ -1057,6 +1163,7 @@ form button.send-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 24px;
 }
 #about .container .about-block .about-block-description {
   margin-right: 41px;
@@ -1069,6 +1176,16 @@ form button.send-form {
   margin-bottom: 85px;
 }
 
+@media (max-width: 768px) {
+  #about .container .about-block {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 5px;
+  }
+  #about .container .about-block .about-block-description {
+    margin-right: 0;
+  }
+}
 /* Стилі для форми */
 form {
   display: -webkit-box;
@@ -1132,6 +1249,11 @@ footer .container .phone_mail {
   font-family: "Roboto", Sans-serif;
   font-size: 42px;
 }
+@media (max-width: 768px) {
+  footer .container .phone_mail {
+    font-size: 32px;
+  }
+}
 footer .container .phone_mail a {
   text-decoration: none;
   color: black;
@@ -1142,6 +1264,12 @@ footer .container .phone_mail a {
 footer .container p {
   color: black;
 }
+@media (max-width: 768px) {
+  footer .container p {
+    font-size: 16px;
+    padding: 7px;
+  }
+}
 
 /* --------------Кнопка прокрутки вверх--------------------- */
 .scroll-to-top {
@@ -1150,7 +1278,7 @@ footer .container p {
   left: 33px;
   width: 50px;
   height: 50px;
-  background-color: #007bff;
+  background-color: #4caf50;
   /* Синий цвет */
   color: #fff;
   border: none;
