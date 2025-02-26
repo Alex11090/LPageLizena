@@ -113,6 +113,42 @@ function closeSliderbtn() {
 
 
 
-// -----------анімація-----------------------------
 
 
+// -----------анимация секций---------------------
+const sections = document.querySelectorAll('.section');
+const handleScroll = () => {
+	sections.forEach(section => {
+		const sectionTop = section.getBoundingClientRect().top;
+		const windowHeight = window.innerHeight;
+		// Если секция попадает в область видимости
+		if (sectionTop < windowHeight) {
+			section.classList.add('visible');
+		}
+
+	});
+
+};
+// Запускаем при прокрутке и при загрузке страницы
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
+// -----------------анимация .responsive-text-------------------------
+// Выбор всех элементов с классом .responsive-text
+const responsiveTXT = document.querySelectorAll('.responsive-text');
+
+// Функция, которая добавляет класс .visible, если элемент в зоне видимости
+const handleLoad = () => {
+	responsiveTXT.forEach(resp => {
+		const responsiveTextTop = resp.getBoundingClientRect().top; // Получаем позицию относительно окна
+		// const windowHeight = window.innerHeight; // Высота окна браузера
+
+		// Если элемент виден в окне
+		if (responsiveTextTop) {
+			resp.classList.add('visible'); // Добавляем класс visible
+		}
+	});
+};
+
+// Запуск функции при загрузке страницы
+window.addEventListener('load', handleLoad);
