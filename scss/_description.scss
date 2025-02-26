@@ -15,7 +15,8 @@ $section-padding: 20px;
   background-size: cover; /* фон будет растянут по ширине и высоте */
   background-position: center center; /* фон будет расположен по центру */
   background-repeat: no-repeat; /* предотвратит повторение изображения */
-  height: 629px;
+  // height: 629px;
+  height: 695px;
   margin-bottom: 50px;
 
   .content-container {
@@ -50,7 +51,7 @@ $section-padding: 20px;
         margin: 0;
 
         .features__item {
-          font-size: 1rem;
+          font-size: 1.2rem;
           padding: 4px 0;
 
           &:last-child {
