@@ -156,7 +156,7 @@ header nav ul a:hover {
 }
 #hero {
   background: url("../images/11.png") center/cover no-repeat;
-  height: 650px;
+  height: 724px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,6 +172,11 @@ header nav ul a:hover {
 #hero .container {
   max-width: 800px;
   padding: 20px;
+}
+#hero .container .hero-btn {
+  position: relative;
+  top: 25px;
+  padding: 13px 61px;
 }
 #hero .container .responsive-text {
   opacity: 0;
@@ -191,26 +196,12 @@ header nav ul a:hover {
 }
 #hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-weight: 300;
 }
 #hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-}
-#hero .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #45a049;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-#hero .btn:hover {
-  background: #367c39;
 }
 
 @media (max-width: 768px) {
