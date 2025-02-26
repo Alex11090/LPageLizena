@@ -33,5 +33,20 @@ footer {
 				padding: 7px;
 			}
 		}
+		.social-icons {
+			margin-top: 10px;
+			display: flex;
+			gap: 15px;
+			justify-content: center;
+			a {
+				font-size: 24px;
+				color: #333;
+				text-decoration: none;
+				transition: color 0.3s ease;
+				&:hover {
+					color: #4caf50; /* Цвет при наведении */
+				}
+			}
+		}
 	}
 }

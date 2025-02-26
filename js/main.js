@@ -143,9 +143,11 @@ const handleLoad = () => {
 		const responsiveTextTop = resp.getBoundingClientRect().top; // Получаем позицию относительно окна
 		// const windowHeight = window.innerHeight; // Высота окна браузера
 
-		// Если элемент виден в окне
+		// Проверяем, находится ли элемент в зоне видимости
 		if (responsiveTextTop) {
-			resp.classList.add('visible'); // Добавляем класс visible
+			setTimeout(() => {
+				resp.classList.add('visible'); // Добавляем класс с задержкой
+			}, 500);
 		}
 	});
 };

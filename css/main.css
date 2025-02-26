@@ -1338,6 +1338,26 @@ footer .container p {
     padding: 7px;
   }
 }
+footer .container .social-icons {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer .container .social-icons a {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+footer .container .social-icons a:hover {
+  color: #4caf50; /* Цвет при наведении */
+}
 
 /* --------------Кнопка прокрутки вверх--------------------- */
 .scroll-to-top {
