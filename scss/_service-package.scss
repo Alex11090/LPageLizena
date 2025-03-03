@@ -40,6 +40,9 @@
 		color: #333;
 		// font-weight: bold;
 		margin-bottom: 45px;
+		@media (max-width: 768px) {
+			font-size: 37px;
+		}
 	}
 
 	p {
@@ -85,6 +88,8 @@
 				text-align: start;
 				margin-bottom: 55px;
 			}
+			.list-of-works {
+			}
 		}
 
 		.package-works-price {
@@ -114,9 +119,22 @@
 			color: #444;
 			padding: 5px 0;
 
-			&::before {
+			// &::before {
+			// 	content: "✔";
+			// 	color: #28a745;
+			// 	margin-right: 8px;
+			// }
+			.checkmark::before {
+				// content: "✔️";
 				content: "✔";
-				color: #28a745;
+				color: green;
+				margin-right: 8px;
+			}
+
+			.crossmark::before {
+				content: "×";
+				font-size: 20px;
+				color: rgb(102, 102, 102);
 				margin-right: 8px;
 			}
 		}
@@ -155,6 +173,9 @@
 				font-size: 20px;
 				font-weight: 30;
 				z-index: 2;
+				@media (max-width: 768px) {
+					padding: 0 22px;
+				}
 			}
 			&::before {
 				content: "";

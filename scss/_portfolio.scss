@@ -75,10 +75,18 @@ $fade-in-delay: 0.3s;
     }
     .swiper {
       .swiper-wrapper {
+        @media (max-width: 768px) {
+          height: 150%;
+        }
         .swiper-slide {
           img {
             width: 100%;
             border-radius: 10px;
+            @media (max-width: 768px) {
+              height: 150%;
+            }
+          }
+          @media (max-width: 768px) {
           }
         }
       }

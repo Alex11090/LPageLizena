@@ -120,7 +120,6 @@ header nav ul a:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
             transform: translateY(-100%);
     text-align: center;
   }
@@ -137,12 +136,10 @@ header nav ul a:hover {
   }
   header nav.open {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
             transform: translateY(0);
   }
   header .burger.open span:nth-child(1) {
     -webkit-transform: rotate(45deg) translate(12px, 6px);
-        -ms-transform: rotate(45deg) translate(12px, 6px);
             transform: rotate(45deg) translate(12px, 6px);
   }
   header .burger.open span:nth-child(2) {
@@ -150,7 +147,6 @@ header nav ul a:hover {
   }
   header .burger.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(12px, -6px);
-        -ms-transform: rotate(-45deg) translate(12px, -6px);
             transform: rotate(-45deg) translate(12px, -6px);
   }
 }
@@ -181,7 +177,6 @@ header nav ul a:hover {
 #hero .container .responsive-text {
   opacity: 0;
   -webkit-transform: translateX(400px);
-      -ms-transform: translateX(400px);
           transform: translateX(400px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -191,7 +186,6 @@ header nav ul a:hover {
 #hero .container .visible {
   opacity: 1;
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 #hero h2 {
@@ -293,8 +287,15 @@ header nav ul a:hover {
   #description .content-container {
     padding: 0;
   }
+  #description .content-container .section-header {
+    margin-top: 51px;
+    margin-bottom: 25px;
+  }
   #description .content-container .section-header .main-title {
     font-size: 28px;
+  }
+  #description .content-container .features .features__list .features__item {
+    font-size: 16px;
   }
   #description .content-container .divider {
     display: none;
@@ -439,7 +440,6 @@ header nav ul a:hover {
 #services .section {
   opacity: 0;
   -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
           transform: translateY(50px);
   -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
@@ -449,13 +449,11 @@ header nav ul a:hover {
 #services .section .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .section.visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .container .services-title h2 {
@@ -497,7 +495,6 @@ header nav ul a:hover {
 }
 #services .container .services-list .service:hover {
   -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
           transform: translateY(-10px);
 }
 #services .container .services-list .service > div img {
@@ -585,7 +582,6 @@ header nav ul a:hover {
 }
 #portfolio .container .gallery img:hover {
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
 
@@ -635,9 +631,19 @@ header nav ul a:hover {
   cursor: pointer;
   z-index: 2;
 }
+@media (max-width: 768px) {
+  .modalSwipers .modals-content .swiper .swiper-wrapper {
+    height: 150%;
+  }
+}
 .modalSwipers .modals-content .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .modalSwipers .modals-content .swiper .swiper-wrapper .swiper-slide img {
+    height: 150%;
+  }
 }
 .modalSwipers .modals-content .swiper .swiper-button-prev {
   color: white; /* Цвет стрелок */
@@ -669,6 +675,11 @@ header nav ul a:hover {
   font-weight: 400;
   color: #333;
   margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .service-package-title h2 {
+    font-size: 37px;
+  }
 }
 .service-package-title p {
   color: #666;
@@ -724,9 +735,15 @@ header nav ul a:hover {
   color: #444;
   padding: 5px 0;
 }
-.service-package-works .package-works .package-works-item::before {
+.service-package-works .package-works .package-works-item .checkmark::before {
   content: "✔";
-  color: #28a745;
+  color: green;
+  margin-right: 8px;
+}
+.service-package-works .package-works .package-works-item .crossmark::before {
+  content: "×";
+  font-size: 20px;
+  color: rgb(102, 102, 102);
   margin-right: 8px;
 }
 .service-package-works .package-works .econom-backgr {
@@ -772,6 +789,11 @@ header nav ul a:hover {
   font-size: 20px;
   font-weight: 30;
   z-index: 2;
+}
+@media (max-width: 768px) {
+  .service-package-works .package-works .common-backgr .common-descr {
+    padding: 0 22px;
+  }
 }
 .service-package-works .package-works .common-backgr::before {
   content: "";
@@ -1388,14 +1410,12 @@ footer .container .social-icons a:hover {
   /* Показываем кнопку */
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
 
 .scroll-to-top.hidden {
   opacity: 0;
   -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
 
@@ -1425,7 +1445,6 @@ body {
 body .section {
   opacity: 0;
   -webkit-transform: translateY(200px);
-      -ms-transform: translateY(200px);
           transform: translateY(200px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -1435,7 +1454,6 @@ body .section {
 body .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 body section {

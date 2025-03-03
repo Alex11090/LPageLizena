@@ -102,8 +102,17 @@ $section-padding: 20px;
     .content-container {
       padding: 0;
       .section-header {
+        margin-top: 51px;
+        margin-bottom: 25px;
         .main-title {
           font-size: 28px;
+        }
+      }
+      .features {
+        .features__list {
+          .features__item {
+            font-size: 16px;
+          }
         }
       }
       .divider {
