@@ -48,6 +48,13 @@ header .container nav {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
+header div a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет текста от родителя */
+  background: none; /* Убирает фоновый цвет */
+  border: none; /* Убирает границы */
+  outline: none; /* Убирает контур фокуса */
+}
 header .logo-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,6 +119,9 @@ header nav ul a:hover {
   header .container .open-modal-btn {
     display: none;
   }
+  header div {
+    display: none;
+  }
   header nav {
     position: fixed;
     top: 0px;
@@ -120,6 +130,7 @@ header nav ul a:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
             transform: translateY(-100%);
     text-align: center;
   }
@@ -136,10 +147,12 @@ header nav ul a:hover {
   }
   header nav.open {
     -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
             transform: translateY(0);
   }
   header .burger.open span:nth-child(1) {
     -webkit-transform: rotate(45deg) translate(12px, 6px);
+        -ms-transform: rotate(45deg) translate(12px, 6px);
             transform: rotate(45deg) translate(12px, 6px);
   }
   header .burger.open span:nth-child(2) {
@@ -147,6 +160,7 @@ header nav ul a:hover {
   }
   header .burger.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(12px, -6px);
+        -ms-transform: rotate(-45deg) translate(12px, -6px);
             transform: rotate(-45deg) translate(12px, -6px);
   }
 }
@@ -177,6 +191,7 @@ header nav ul a:hover {
 #hero .container .responsive-text {
   opacity: 0;
   -webkit-transform: translateX(400px);
+      -ms-transform: translateX(400px);
           transform: translateX(400px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -186,6 +201,7 @@ header nav ul a:hover {
 #hero .container .visible {
   opacity: 1;
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 #hero h2 {
@@ -440,6 +456,7 @@ header nav ul a:hover {
 #services .section {
   opacity: 0;
   -webkit-transform: translateY(50px);
+      -ms-transform: translateY(50px);
           transform: translateY(50px);
   -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
@@ -449,11 +466,13 @@ header nav ul a:hover {
 #services .section .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .section.visible {
   opacity: 1;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .container .services-title h2 {
@@ -495,6 +514,7 @@ header nav ul a:hover {
 }
 #services .container .services-list .service:hover {
   -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
           transform: translateY(-10px);
 }
 #services .container .services-list .service > div img {
@@ -582,6 +602,7 @@ header nav ul a:hover {
 }
 #portfolio .container .gallery img:hover {
   -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
 
@@ -1410,12 +1431,14 @@ footer .container .social-icons a:hover {
   /* Показываем кнопку */
   opacity: 1;
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
 }
 
 .scroll-to-top.hidden {
   opacity: 0;
   -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
 
@@ -1445,6 +1468,7 @@ body {
 body .section {
   opacity: 0;
   -webkit-transform: translateY(200px);
+      -ms-transform: translateY(200px);
           transform: translateY(200px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -1454,6 +1478,7 @@ body .section {
 body .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 body section {

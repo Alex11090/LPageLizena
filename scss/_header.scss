@@ -37,6 +37,15 @@ header {
       transition: transform 0.3s ease-in-out;
     }
   }
+  div {
+    a {
+      text-decoration: none; /* Убирает подчеркивание */
+      color: inherit; /* Наследует цвет текста от родителя */
+      background: none; /* Убирает фоновый цвет */
+      border: none; /* Убирает границы */
+      outline: none; /* Убирает контур фокуса */
+    }
+  }
 
   .logo-block {
     display: flex;
@@ -103,6 +112,9 @@ header {
       .open-modal-btn {
         display: none;
       }
+    }
+    div {
+      display: none;
     }
 
     nav {
