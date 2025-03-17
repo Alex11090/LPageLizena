@@ -78,7 +78,7 @@
 					<li><a href="#reviews">Відгуки</a></li>
 					<li><a href="#about">Про нас</a></li>
 					<li><a href="#contacts">Контакти</a></li>
-					<li><a href="tel:0988997707">+38 (098)899 77 07</a></li>
+					<li><a href="tel:0988997707">+38 (098) 899 77 07</a></li>
 				</ul>
 			</nav>
 			<!-- <div class="header__phone">
@@ -685,11 +685,13 @@
 			<span class="close">×</span>
 			<h2>Заявка на дзвінок</h2>
 			<p>Залиште свої контактні дані і ми з Вами зв'яжемся в найближчий час.</p>
-			<div class="wrapper">
-				<form action="sender.php" method="post" class="form1">
+			<div class="wrapper contact-form">
+				<form action="sender.php" method="post">
+
+					<input type="text" class="name" name="name" placeholder="Им'я" required>
 					<input type="text" class="phone" name="phone" placeholder="Телефон">
-					<button type="button" class="send-form">відправити заявку</button>
-					<div class="status"></div>
+					<button type="button" class="submit-btn www send-form">відправити заявку</button>
+					<div class="status" style="color: rgb(0, 0, 0);"></div>
 				</form>
 			</div>
 		</div>
