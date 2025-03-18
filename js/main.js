@@ -154,3 +154,30 @@ const handleLoad = () => {
 
 // Запуск функции при загрузке страницы
 window.addEventListener('load', handleLoad);
+
+
+// --------------свайпер відгуки--------------------
+window.onload = function () {
+	new Swiper(".mySwiper", {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		autoplay: {
+			delay: 3000, // 3 секунды между слайдами
+			disableOnInteraction: false, // Не отключать автопрокрутку при взаимодействии
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			576: { slidesPerView: 1 },
+			768: { slidesPerView: 1.2 },
+			1024: { slidesPerView: 2 }
+		}
+	});
+};

@@ -82,14 +82,38 @@ header nav ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   padding: 0;
 }
 header nav ul li {
   margin-left: 20px;
+}
+header nav ul li:not(:last-child) a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 5px 0;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li:not(:last-child) a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #4caf50;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+header nav ul li:not(:last-child) a:hover::after {
+  width: 100%;
 }
 header nav ul a {
   text-decoration: none;
@@ -130,7 +154,6 @@ header nav ul a:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
             transform: translateY(-100%);
     text-align: center;
   }
@@ -147,12 +170,10 @@ header nav ul a:hover {
   }
   header nav.open {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
             transform: translateY(0);
   }
   header .burger.open span:nth-child(1) {
     -webkit-transform: rotate(45deg) translate(12px, 6px);
-        -ms-transform: rotate(45deg) translate(12px, 6px);
             transform: rotate(45deg) translate(12px, 6px);
   }
   header .burger.open span:nth-child(2) {
@@ -160,7 +181,6 @@ header nav ul a:hover {
   }
   header .burger.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(12px, -6px);
-        -ms-transform: rotate(-45deg) translate(12px, -6px);
             transform: rotate(-45deg) translate(12px, -6px);
   }
 }
@@ -191,7 +211,6 @@ header nav ul a:hover {
 #hero .container .responsive-text {
   opacity: 0;
   -webkit-transform: translateX(400px);
-      -ms-transform: translateX(400px);
           transform: translateX(400px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -201,7 +220,6 @@ header nav ul a:hover {
 #hero .container .visible {
   opacity: 1;
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 #hero h2 {
@@ -456,7 +474,6 @@ header nav ul a:hover {
 #services .section {
   opacity: 0;
   -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
           transform: translateY(50px);
   -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
@@ -466,13 +483,11 @@ header nav ul a:hover {
 #services .section .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .section.visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 #services .container .services-title h2 {
@@ -514,7 +529,6 @@ header nav ul a:hover {
 }
 #services .container .services-list .service:hover {
   -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
           transform: translateY(-10px);
 }
 #services .container .services-list .service > div img {
@@ -602,7 +616,6 @@ header nav ul a:hover {
 }
 #portfolio .container .gallery img:hover {
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
 
@@ -680,13 +693,82 @@ header nav ul a:hover {
 }
 
 #reviews {
-  margin-bottom: 80px;
-}
-#reviews .container p {
+  padding: 60px 0;
+  background: #f8f9fa;
   text-align: center;
-  margin-top: 30px;
+}
+#reviews .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+#reviews .section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#reviews .section-subtitle {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
+.swiper {
+  overflow: hidden;
+}
+
+.review-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: auto;
+}
+.review-slide img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background: #ccc;
+  display: block;
+}
+.review-slide p {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #333;
+}
+.review-slide span {
+  font-weight: bold;
+  color: #555;
+}
+
+@media (max-width: 1024px) {
+  .swiper-slide {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .swiper-slide {
+    max-width: 100%;
+    text-align: center;
+  }
+}
 .service-package-title {
   text-align: center;
   margin-bottom: 40px;
@@ -1431,14 +1513,12 @@ footer .container .social-icons a:hover {
   /* Показываем кнопку */
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
 
 .scroll-to-top.hidden {
   opacity: 0;
   -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
 
@@ -1468,7 +1548,6 @@ body {
 body .section {
   opacity: 0;
   -webkit-transform: translateY(200px);
-      -ms-transform: translateY(200px);
           transform: translateY(200px);
   -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
@@ -1478,7 +1557,6 @@ body .section {
 body .visible {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 body section {
