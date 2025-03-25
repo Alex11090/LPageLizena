@@ -47,7 +47,6 @@ $fade-in-delay: 0.3s;
 }
 
 /*----------------модалка свайпера---------------------*/
-
 .modalSwipers {
   display: none;
   position: fixed;
@@ -56,52 +55,118 @@ $fade-in-delay: 0.3s;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
+  // display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
+
   .modals-content {
     position: relative;
     width: 80%;
-    max-width: 800px;
+    max-width: 900px;
 
     .close {
       position: absolute;
-      top: -26x;
+      top: -26px;
       right: -38px;
       font-size: 30px;
       color: white;
       cursor: pointer;
       z-index: 2;
     }
+
     .swiper {
+      width: 100%;
+      height: 80vh;
+
       .swiper-wrapper {
-        @media (max-width: 768px) {
-          height: 150%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
         }
-        .swiper-slide {
-          img {
-            width: 100%;
-            border-radius: 10px;
-            @media (max-width: 768px) {
-              height: 150%;
-            }
-          }
-          @media (max-width: 768px) {
-          }
-        }
       }
-      .swiper-button-prev {
-        color: white; /* Цвет стрелок */
-        width: 50px;
-        height: 50px;
-        left: -60px; /* Смещаем влево за слайдер */
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: white;
+      width: 50px;
+      height: 50px;
+
+      @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
       }
-      .swiper-button-next {
-        color: white; /* Цвет стрелок */
-        width: 50px;
-        height: 50px;
-        right: -60px; /* Смещаем вправо за слайдер */
+
+      @media (max-width: 480px) {
+        width: 30px;
+        height: 30px;
       }
+    }
+
+    .swiper-button-prev {
+      left: -60px;
+
+      @media (max-width: 768px) {
+        left: -40px;
+      }
+
+      @media (max-width: 480px) {
+        left: -30px;
+      }
+    }
+
+    .swiper-button-next {
+      right: -60px;
+
+      @media (max-width: 768px) {
+        right: -40px;
+      }
+
+      @media (max-width: 480px) {
+        right: -30px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .modals-content {
+      width: 90%;
+      max-width: 700px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modals-content {
+      width: 95%;
+      max-width: 500px;
+    }
+
+    .swiper {
+      height: 70vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modals-content {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .swiper {
+      height: 60vh;
     }
   }
 }

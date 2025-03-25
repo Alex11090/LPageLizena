@@ -86,6 +86,8 @@ let swiper;
 
 function openSlider(index) {
 	document.getElementById("modalSwiper").style.display = "flex";
+
+
 	if (!swiper) {
 		swiper = new Swiper(".mySwiper", {
 			loop: true,

@@ -2,6 +2,34 @@
 <html lang="uk">
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11357415279"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'AW-11357415279');
+	</script>
+
+	<!-- Event snippet for Просмотр страницы conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+	<script>
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof (url) != 'undefined') {
+					window.location = url;
+				}
+			};
+			gtag('event', 'conversion', {
+				'send_to': 'AW-11357415279/Z7KdCOPx-JIaEO_O0acq',
+				'value': 1.0,
+				'currency': 'UAH',
+				'event_callback': callback
+			});
+			return false;
+		}
+	</script>
 	<!-- Кодировка и адаптивность -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,7 +186,7 @@
 			<div class="services-list">
 				<div class="service">
 					<div>
-						<img src="images/object/bud.jpeg" alt="Будівництво">
+						<img src="images/objects/bud.jpeg" alt="Будівництво">
 						<h3>Будівництво</h3>
 						<p>від 12600 грн/м²</p>
 						<p>Будівництво будинків, котеджів, комерційних приміщень. Виконуємо роботи «під ключ» – від
@@ -505,10 +533,9 @@
 				<img src="./images/2.jpg" alt="Проєкт 1" onclick="openSlider(0)">
 				<img src="./images/econ.jpg" alt="Проєкт 2" onclick="openSlider(1)">
 				<img src="./images/kaprem.jpg" alt="Проєкт 3" onclick="openSlider(2)">
-				<img src="./images/object/photos-0D43B3D8-7519-4F5A-A4EA-AAAB97B3F858-1612807042507.jpeg" alt="Проєкт 4"
-					onclick="openSlider(3)">
-				<img src="./images/object/bud.jpeg" alt="Проєкт 5" onclick="openSlider(4)">
-				<img src="./images/kaprem.jpg" alt="Проєкт 6" onclick="openSlider(5)">
+				<img src="./images/objects/bud1.jpeg" alt="Проєкт 4" onclick="openSlider(3)">
+				<img src="./images/objects/rem.jpeg" alt="Проєкт 5" onclick="openSlider(4)">
+				<img src="./images/proj/rem1.jpeg" alt="Проєкт 6" onclick="openSlider(5)">
 			</div>
 
 		</div>
@@ -522,14 +549,15 @@
 					<div class="swiper-slide"><img src="./images/2.jpg" alt="Проєкт 1"></div>
 					<div class="swiper-slide"><img src="./images/econ.jpg" alt="Проєкт 2"></div>
 					<div class="swiper-slide"><img src="./images/kaprem.jpg" alt="Проєкт 3"></div>
-					<div class="swiper-slide"><img src="./images/econ.jpg" alt="Проєкт 4"></div>
-					<div class="swiper-slide"><img src="./images/2.jpg" alt="Проєкт 5"></div>
-					<div class="swiper-slide"><img src="./images/econ.jpg" alt="Проєкт 6"></div>
+					<div class="swiper-slide"><img src="./images/objects/bud1.jpeg" alt="Проєкт 4"></div>
+					<div class="swiper-slide"><img src="./images/objects/rem.jpeg" alt="Проєкт 5"></div>
+					<div class="swiper-slide"><img src="./images/proj/rem1.jpeg" alt="Проєкт 6"></div>
 				</div>
-				<!-- Кнопки навигации -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
+
 			</div>
+			<!-- Кнопки навигации -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
 		</div>
 	</div>
 	<!-- <section id="portfolio">
